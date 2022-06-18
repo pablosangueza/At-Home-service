@@ -1,15 +1,16 @@
 namespace AtHome.Domain
 {
-    public class Coordinate
+    public class Address
     {
+        public string AddressLine { get; set; }
         public int Latitde { get; set; }
         public int Longitude { get; set; }
 
     }
     public class ShippingInfo
     {
-        public Coordinate Source { get; set; }
-        public Coordinate Destination { get; set; }
+        public Address Source { get; set; }
+        public Address Destination { get; set; }
         public double[] Dimentions { get; set; }
 
 

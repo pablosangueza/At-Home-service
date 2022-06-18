@@ -13,6 +13,7 @@ namespace AtHome.Domain
     }
     public class ShippingCompany
     {
+        public string Name { get; set; }
         public string ServiceURI { get; set; }
         public ServiceType ServiceType { get; set; }
         public FormatResponse FormatResponse { get; set; }

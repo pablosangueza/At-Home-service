@@ -5,8 +5,8 @@ namespace AtHome.Service.interfaces
 {
     public interface IShippingService
     {
-         void AddShippingCompany(ShippingCompany company);
-         
-          CompanyShippingDeal FindBestDeal(ShippingInfo shipingInfo);
+        void AddShippingCompany(ShippingCompany company);
+        CompanyShippingDeal FindBestDeal(ShippingInfo shipingInfo);
+        IList<ShippingCompany> GetRegisteredShippingCompanies();
     }
 }

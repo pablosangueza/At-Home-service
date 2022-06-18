@@ -31,8 +31,8 @@ public class ShippingServiceTest
     {
         ShippingInfo shippingInfo = new ShippingInfo()
         {
-            Source = new Coordinate { Latitde = 123, Longitude = 566},
-            Destination = new Coordinate { Latitde = 789, Longitude = 987},
+            Source = new Address { AddressLine= "Av. Address 1", Latitde = 123, Longitude = 566},
+            Destination = new Address { AddressLine= "Av. Address 12", Latitde = 789, Longitude = 987},
             Dimentions = new double[] {50,50,50}
             
         };
@@ -44,7 +44,7 @@ public class ShippingServiceTest
         
         _mockRepository.Setup(s => s.GetShippingCompaniesInfo()).Returns(companies);
 
-        _mockSHAPI.Setup( s=>s.GetOffer(It.IsAny<ShippingCompany>(), shippingInfo)).Returns(new Random().NextDouble() * (100 - 0) + 0);
+        _mockSHAPI.Setup( s=>s.GetOffer(It.IsAny<ShippingCompany>(), shippingInfo)).Returns((decimal)(new Random().NextDouble() * (100 - 0) + 0));
 
         var deal =_shippingService.FindBestDeal(shippingInfo);
 

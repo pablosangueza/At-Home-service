@@ -32,7 +32,7 @@ namespace AtHome.Service.services
             var deals = new List<CompanyShippingDeal>();
             foreach (ShippingCompany company in companies)
             {
-                double ammount = _shippingCompanyAPI.GetOffer(company, shipingInfo);
+                decimal ammount = _shippingCompanyAPI.GetOffer(company, shipingInfo);
                 if(bestDeal == null)
                     bestDeal = new CompanyShippingDeal(){ Company = company, Amonut= ammount};
                 else if ( ammount < bestDeal.Amonut)
@@ -44,6 +44,11 @@ namespace AtHome.Service.services
 
             return bestDeal;
 
+        }
+
+        public IList<ShippingCompany> GetRegisteredShippingCompanies()
+        {
+            return _repository.GetShippingCompaniesInfo();
         }
     }
 }

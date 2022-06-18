@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AtHome.Service\AtHome.Service.csproj" />
+    <ProjectReference Include="..\AtHome.Domain\AtHome.Domain.csproj" />
+    <ProjectReference Include="..\AtHome.DataRepository\AtHome.DataRepository.csproj" />
+    <ProjectReference Include="..\AtHome.ShippingCompanyAPI\AtHome.ShippingCompanyAPI.csproj" />
+  </ItemGroup>
+
+</Project>
