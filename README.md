@@ -16,7 +16,7 @@ Open Browser on : https://localhost:7144/swagger/index.html
 
 Swagger Should be loaded.
 
-![alt text](https://github.com/pablosangueza/at-home-service/blob/main/doc-resources/AtHomeSwaggerAPI.png)
+![alt text](https://github.com/pablosangueza/At-Home-service/blob/main/resources/AtHomeSwaggerAPI.png)
 
 ## Run Application with Docker
 
