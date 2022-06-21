@@ -4,6 +4,6 @@ namespace AtHome.APIHandler.interfaces
 {
     public interface IShippingCompanyAPI
     {
-        decimal GetOffer(ShippingCompany company, ShippingInfo shipingInfo);
+        Task<decimal> GetShippingCost(ShippingCompany company, ShippingInfo shipingInfo);
     }
 }

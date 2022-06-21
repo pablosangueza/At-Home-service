@@ -13,6 +13,10 @@ namespace AtHome.Domain
         public Address Destination { get; set; }
         public double[] Dimentions { get; set; }
 
+        public string SourceFieldName { get; set; }
+        public string DestinationFieldName { get; set; }
+        public string DimentionsFieldName { get; set; }
+
 
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AtHome.APIHandler.interfaces;
 using AtHome.DataRepository.interfaces;
 using AtHome.Domain;
@@ -27,7 +28,7 @@ public class ShippingServiceTest
     }
 
     [Test]
-    public void TestBeastDeal()
+    public async Task TestBeastDealAsync()
     {
         ShippingInfo shippingInfo = new ShippingInfo()
         {
@@ -44,9 +45,9 @@ public class ShippingServiceTest
         
         _mockRepository.Setup(s => s.GetShippingCompaniesInfo()).Returns(companies);
 
-        _mockSHAPI.Setup( s=>s.GetOffer(It.IsAny<ShippingCompany>(), shippingInfo)).Returns((decimal)(new Random().NextDouble() * (100 - 0) + 0));
+        _mockSHAPI.Setup( s=>s.GetShippingCost(It.IsAny<ShippingCompany>(), shippingInfo)).ReturnsAsync((decimal)(new Random().NextDouble() * (100 - 0) + 0));
 
-        var deal =_shippingService.FindBestDeal(shippingInfo);
+        var deal = await _shippingService.FindBestDealAsync(shippingInfo);
 
         Assert.Pass();
     }

@@ -23,7 +23,7 @@ namespace AtHome.Service.services
            _repository.StoreShippingCompany(company);
         }
 
-        public CompanyShippingDeal FindBestDeal(ShippingInfo shipingInfo)
+        public async Task<CompanyShippingDeal> FindBestDealAsync(ShippingInfo shipingInfo)
         {
             CompanyShippingDeal bestDeal = null;
 
@@ -32,7 +32,7 @@ namespace AtHome.Service.services
             var deals = new List<CompanyShippingDeal>();
             foreach (ShippingCompany company in companies)
             {
-                decimal ammount = _shippingCompanyAPI.GetOffer(company, shipingInfo);
+                decimal ammount = await _shippingCompanyAPI.GetShippingCost(company, shipingInfo);
                 if(bestDeal == null)
                     bestDeal = new CompanyShippingDeal(){ Company = company, Amonut= ammount};
                 else if ( ammount < bestDeal.Amonut)

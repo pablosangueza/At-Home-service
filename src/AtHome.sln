@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtHome.ShippingCompanyAPI",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtHome.API", "AtHome.API\AtHome.API.csproj", "{0731DFB3-6985-4B62-9687-EE190033A8BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtHome.ShippingCompanyAPI.Test", "AtHome.ShippingCompanyAPI.Test\AtHome.ShippingCompanyAPI.Test.csproj", "{73042B93-BA92-49D8-BD6F-C883DE830770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{74488C10-F0AE-11EC-95B2-57A72879A4FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,13 @@ Global
 		{0731DFB3-6985-4B62-9687-EE190033A8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0731DFB3-6985-4B62-9687-EE190033A8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0731DFB3-6985-4B62-9687-EE190033A8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73042B93-BA92-49D8-BD6F-C883DE830770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73042B93-BA92-49D8-BD6F-C883DE830770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73042B93-BA92-49D8-BD6F-C883DE830770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73042B93-BA92-49D8-BD6F-C883DE830770}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73042B93-BA92-49D8-BD6F-C883DE830770} = {74488C10-F0AE-11EC-95B2-57A72879A4FE}
+		{29BF4FA8-D23A-4D0E-8D0F-FBAEE44D586F} = {74488C10-F0AE-11EC-95B2-57A72879A4FE}
 	EndGlobalSection
 EndGlobal

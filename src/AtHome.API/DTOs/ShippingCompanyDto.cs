@@ -10,7 +10,7 @@ namespace AtHome.API.DTOs
         [DefaultValue("https://companya.com/calculateshipping")]
         public string ApiUri { get; set; }
 
-        [DefaultValue("REST")]
+        [DefaultValue("REST_RANDOM_MOCK")]
         public string ServiceType { get; set; }
 
         [DefaultValue("JSON")]

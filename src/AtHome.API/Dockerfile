@@ -1,5 +1,6 @@
 #Instructions to build the Blog Engine API into a Docker container
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 as base
+ENV ASPNETCORE_ENVIRONMENT=Development
 EXPOSE 80
 EXPOSE 443
 
@@ -7,7 +8,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 as devbase
 WORKDIR /src
 
 FROM devbase as build
-COPY ./src .
+COPY . .
 RUN dotnet build "AtHome.sln" -c Release -o /app
 
 FROM build AS publish

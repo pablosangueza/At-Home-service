@@ -4,7 +4,8 @@ namespace AtHome.Domain
     {
         REST = 0,
         SOAP = 1,
-        RPC = 2
+        RPC = 2,
+        REST_RANDOM_MOCK = 3
     }
     public enum FormatResponse
     {

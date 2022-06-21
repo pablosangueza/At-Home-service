@@ -62,14 +62,18 @@ namespace AtHome.API.Controllers
         }
 
         [HttpGet("GetBestShippingDeal")]
-        public IActionResult GetBestShippingDeal([FromQuery] ShippingDto shippingData)
+        public async Task<IActionResult> GetBestShippingDeal([FromQuery] ShippingDto shippingData)
         {
-            var bestDeal = _shippingService.FindBestDeal(
+            var bestDeal = await _shippingService.FindBestDealAsync(
                 new Domain.ShippingInfo()
                 {
                     Source = new Domain.Address() { AddressLine = shippingData.Source },
                     Destination = new Domain.Address() { AddressLine = shippingData.Destination },
-                    Dimentions = shippingData.Dimentions
+                    Dimentions = shippingData.Dimentions,
+                    SourceFieldName = shippingData.SourceFieldName,
+                    DestinationFieldName = shippingData.DestinationFieldName,
+                    DimentionsFieldName = shippingData.DimentionsFieldName
+                    
                 });
             return Ok(new { CompanyName = bestDeal.Company.Name, CompanyURL = bestDeal.Company.ServiceURI, Ammont = string.Format("{0:0.00}",bestDeal.Amonut) });
         }
