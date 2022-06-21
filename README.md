@@ -40,5 +40,12 @@ dotnet "test" "AtHome.Service.Test\AtHome.Service.Test.csproj"
 ```bash
 dotnet "test"  "AtHome.ShippingCompanyAPI.Test\AtHome.ShippingCompanyAPI.Test.csproj"
 ```
+## Additional notes
+
+- As we don't have external API for testing purpose, was created the service type "REST_RANDOM_MOCK" that simulate a external API call a get the shipping amount randomically for any company. This is only for testing prupposes.
+
+![alt text](https://github.com/pablosangueza/At-Home-service/blob/main/resources/AtHomeRestRandom.png)
+
+
 
 
