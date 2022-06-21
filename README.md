@@ -23,7 +23,7 @@ Swagger Should be loaded.
 Inside src directory: 
 
 ```bash
- docker build -f .\AtHome.API\Dockerfile -t at-home-service .
+docker build -f .\AtHome.API\Dockerfile -t at-home-service .
 ```
 
 ```bash
