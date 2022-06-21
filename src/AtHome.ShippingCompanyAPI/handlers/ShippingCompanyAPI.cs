@@ -38,7 +38,7 @@ namespace AtHome.APIHandler.handlers
 
             return ammount;
 
-         
+
         }
     }
 }

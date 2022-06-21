@@ -23,13 +23,14 @@ namespace AtHome.API.Controllers
         public IActionResult GetShippingCompanies()
         {
             IList<ShippingCompany> companies = _shippingService.GetRegisteredShippingCompanies();
-            return Ok(companies.Select( c=> 
-            new {
-                CompanyName= c.Name, 
-                CompanyApiUrl=c.ServiceURI, 
-                ServiceType=c.ServiceType.ToString(),
-                FormatResponse= c.FormatResponse.ToString()
-                  }));
+            return Ok(companies.Select(c =>
+            new
+            {
+                CompanyName = c.Name,
+                CompanyApiUrl = c.ServiceURI,
+                ServiceType = c.ServiceType.ToString(),
+                FormatResponse = c.FormatResponse.ToString()
+            }));
 
         }
 
@@ -73,9 +74,9 @@ namespace AtHome.API.Controllers
                     SourceFieldName = shippingData.SourceFieldName,
                     DestinationFieldName = shippingData.DestinationFieldName,
                     DimentionsFieldName = shippingData.DimentionsFieldName
-                    
+
                 });
-            return Ok(new { CompanyName = bestDeal.Company.Name, CompanyURL = bestDeal.Company.ServiceURI, Ammont = string.Format("{0:0.00}",bestDeal.Amonut) });
+            return Ok(new { CompanyName = bestDeal.Company.Name, CompanyURL = bestDeal.Company.ServiceURI, Ammont = string.Format("{0:0.00}", bestDeal.Amonut) });
         }
 
 

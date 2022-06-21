@@ -112,13 +112,13 @@ namespace AtHome.ShippingCompanyAPI.handlers
         public async Task<decimal> ProcessShippingCalculationAsync(ShippingCompany company, ShippingInfo shipingInfo)
         {
             string mediaType = GetMediaType(company.FormatResponse);
-            Init(company.ServiceURI,mediaType);
+            Init(company.ServiceURI, mediaType);
 
             var endpointRequest = new EndpointRequestDto
             {
                 HttpMethod = HttpMethod.Get,
                 RelativeUrl = string.Format(company.ServiceURI),
-                Payload = JToken.FromObject(new 
+                Payload = JToken.FromObject(new
                 {
                     Source = shipingInfo.Source,
                     Destination = shipingInfo.Destination,

@@ -18,7 +18,7 @@ public class ShippingServiceTest
     private Mock<IRepository> _mockRepository;
     private Mock<IShippingCompanyAPI> _mockSHAPI;
 
-    
+
     [SetUp]
     public void Setup()
     {
@@ -32,20 +32,20 @@ public class ShippingServiceTest
     {
         ShippingInfo shippingInfo = new ShippingInfo()
         {
-            Source = new Address { AddressLine= "Av. Address 1", Latitde = 123, Longitude = 566},
-            Destination = new Address { AddressLine= "Av. Address 12", Latitde = 789, Longitude = 987},
-            Dimentions = new double[] {50,50,50}
-            
+            Source = new Address { AddressLine = "Av. Address 1", Latitde = 123, Longitude = 566 },
+            Destination = new Address { AddressLine = "Av. Address 12", Latitde = 789, Longitude = 987 },
+            Dimentions = new double[] { 50, 50, 50 }
+
         };
 
         List<ShippingCompany> companies = new List<ShippingCompany>();
-        companies.Add (new ShippingCompany(){ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse= FormatResponse.JSON});
-        companies.Add (new ShippingCompany(){ServiceURI = "https://company2.com/calcaulate", ServiceType = ServiceType.REST, FormatResponse= FormatResponse.JSON });
-        companies.Add (new ShippingCompany(){ServiceURI = "https://company3.com/shipammount", ServiceType = ServiceType.SOAP, FormatResponse= FormatResponse.XML});
-        
+        companies.Add(new ShippingCompany() { ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse = FormatResponse.JSON });
+        companies.Add(new ShippingCompany() { ServiceURI = "https://company2.com/calcaulate", ServiceType = ServiceType.REST, FormatResponse = FormatResponse.JSON });
+        companies.Add(new ShippingCompany() { ServiceURI = "https://company3.com/shipammount", ServiceType = ServiceType.SOAP, FormatResponse = FormatResponse.XML });
+
         _mockRepository.Setup(s => s.GetShippingCompaniesInfo()).Returns(companies);
 
-        _mockSHAPI.Setup( s=>s.GetShippingCost(It.IsAny<ShippingCompany>(), shippingInfo)).ReturnsAsync((decimal)(new Random().NextDouble() * (100 - 0) + 0));
+        _mockSHAPI.Setup(s => s.GetShippingCost(It.IsAny<ShippingCompany>(), shippingInfo)).ReturnsAsync((decimal)(new Random().NextDouble() * (100 - 0) + 0));
 
         var deal = await _shippingService.FindBestDealAsync(shippingInfo);
 
@@ -54,7 +54,7 @@ public class ShippingServiceTest
     [Test]
     public void TestAddShippingCompanies()
     {
-        var company = new ShippingCompany(){ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse= FormatResponse.JSON};
+        var company = new ShippingCompany() { ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse = FormatResponse.JSON };
 
         _shippingService.AddShippingCompany(company);
 

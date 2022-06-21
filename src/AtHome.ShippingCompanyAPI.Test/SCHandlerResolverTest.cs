@@ -13,7 +13,7 @@ namespace AtHome.ShippingCompanyAPI.Test;
 public class SCHandlerResolverTest
 {
     private ISCHandlerResolver _scHandlerResolver;
- 
+
     [SetUp]
     public void Setup()
     {
@@ -24,7 +24,7 @@ public class SCHandlerResolverTest
         scHandlers.Add(new RpcApiHandler());
 
         _scHandlerResolver = new SCHandlerResolver(scHandlers);
-        
+
 
 
     }

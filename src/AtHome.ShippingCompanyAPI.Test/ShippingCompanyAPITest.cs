@@ -29,17 +29,17 @@ public class ShippingCompanyAPITest
     {
         ShippingInfo shippingInfo = new ShippingInfo()
         {
-            Source = new Address { AddressLine= "Av. Address 1", Latitde = 123, Longitude = 566},
-            Destination = new Address { AddressLine= "Av. Address 12", Latitde = 789, Longitude = 987},
-            Dimentions = new double[] {50,50,50}
-            
+            Source = new Address { AddressLine = "Av. Address 1", Latitde = 123, Longitude = 566 },
+            Destination = new Address { AddressLine = "Av. Address 12", Latitde = 789, Longitude = 987 },
+            Dimentions = new double[] { 50, 50, 50 }
+
         };
 
-        var company = new ShippingCompany(){ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse= FormatResponse.JSON};
+        var company = new ShippingCompany() { ServiceURI = "https://company1.net/getoffer", ServiceType = ServiceType.REST, FormatResponse = FormatResponse.JSON };
 
         _mockScHandlerResolver.Setup(s => s.Resolve(It.IsAny<ServiceType>())).Returns(new MockRandomApiHandler());
 
-        decimal ammonut =await _shippingCompanyAPI.GetShippingCost(company,shippingInfo);
+        decimal ammonut = await _shippingCompanyAPI.GetShippingCost(company, shippingInfo);
 
 
         Assert.Pass();
